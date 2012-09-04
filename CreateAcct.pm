@@ -26,13 +26,13 @@ sub get_unix_user {
     
     open(FH, "<", "/etc/passwd") or die "open failed: $!";
     
-    while ($line = <FH>) {
+    while (my $line = <FH>) {
 	my ( $user, $pass, $uid, $gid, $group, $home, $shell ) = split(":", $line);
 	
-	if ( "$user" == "$cpanel_user" ) {
-	    print "user $user matches!\n";
-	    print "$uid", "\n";
-	    print "$gid", "\n";
+	if ( $user eq $cpanel_user ) {
+	    print "UID and GID for new user $user:", "\n";
+	    print "uid = $uid", "\n";
+	    print "gid = $gid", "\n";
 	}
     }
 }
