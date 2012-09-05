@@ -1,4 +1,4 @@
-.PHONY: module install uninstall dist-tgz dist-clean
+.PHONY: install uninstall dist-tgz dist-clean
 
 MANAGE=/usr/local/cpanel/bin/manage_hooks
 
@@ -15,4 +15,4 @@ dist-tgz:
 	tar -czvf CustomAccount.tar.gz CreateAcct.pm Makefile
 
 dist-clean:
-	rm CustomAccount.tar.gz
+	rm -f CustomAccount.tar.gz
