@@ -37,5 +37,4 @@ sub get_unix_user {
     }
 }
 
-
 1;
